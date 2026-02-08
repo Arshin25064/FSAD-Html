@@ -1,95 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Event Registration</title>
+    <meta charset="UTF-8">
+    <title>Tantraz Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            margin: 0;
+            padding: 0;
+        }
 
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background: #f4f6f8;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            background: #ffffff;
+            padding: 25px 30px;
+            border-radius: 8px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
 
-    .form-container {
-        background: #fff;
-        padding: 25px;
-        width: 320px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #203a43;
+        }
 
-    h2 {
-        text-align: center;
-        margin-bottom: 20px;
-    }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
 
-    label {
-        display: block;
-        margin-top: 10px;
-        font-size: 14px;
-    }
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
 
-    input, select, textarea {
-        width: 100%;
-        padding: 8px;
-        margin-top: 5px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        font-size: 14px;
-    }
+        .options {
+            margin-top: 8px;
+        }
 
-    textarea {
-        resize: none;
-    }
+        .options label {
+            display: inline-block;
+            margin-right: 15px;
+            font-weight: normal;
+        }
 
-    button {
-        margin-top: 15px;
-        width: 100%;
-        padding: 10px;
-        background: #007bff;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-    }
+        textarea {
+            resize: vertical;
+        }
 
-    button:hover {
-        background: #0056b3;
-    }
-</style>
+        button {
+            width: 100%;
+            margin-top: 20px;
+            padding: 12px;
+            background: #203a43;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #2c5364;
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="form-container">
-    <h2>Event Registration</h2>
-
+<div class="container">
+    <h2>Tantraz Registration</h2>
     <form>
+        <!-- Full Name -->
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="fullname" placeholder="Enter your full name" required>
 
-        <label>Full Name</label>
-        <input type="text" placeholder="Fill your full name" required>
+        <!-- Email -->
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
-        <label>Email</label>
-        <input type="email" placeholder="Fill your email address" required>
-
-        <label>Participation Category</label>
-        <select required>
-            <option value="">-- Select Category --</option>
-            <option>Individual</option>
-            <option>Team</option>
-            <option>Audience</option>
+        <!-- Participation Category -->
+        <label for="category">Participation Category</label>
+        <select id="category" name="category" required>
+            <option value="">Select category</option>
+            <option value="individual">Individual</option>
+            <option value="team">Team</option>
+            <option value="audience">Audience</option>
         </select>
 
-        <label>Short Biography</label>
-        <textarea maxlength="200" rows="4"
-          placeholder="Tell us about yourself (max 200 characters)..."></textarea>
+        <!-- T-shirt Size -->
+        <label>T-Shirt Size</label>
+        <div class="options">
+            <label><input type="radio" name="size" value="S" required> S</label>
+            <label><input type="radio" name="size" value="M"> M</label>
+            <label><input type="radio" name="size" value="L"> L</label>
+            <label><input type="radio" name="size" value="XL"> XL</label>
+        </div>
 
+        <!-- Technical Interests -->
+        <label>Technical Interests</label>
+        <div class="options">
+            <label><input type="checkbox" name="interest" value="AI"> AI</label>
+            <label><input type="checkbox" name="interest" value="Web Dev"> Web Development</label>
+            <label><input type="checkbox" name="interest" value="Cloud"> Cloud Computing</label>
+        </div>
+
+        <!-- Expectations -->
+        <label for="expectations">Expectations / Suggestions</label>
+        <textarea id="expectations" name="expectations" rows="4" placeholder="Share your thoughts..."></textarea>
+
+        <!-- Submit Button -->
         <button type="submit">Register</button>
-
     </form>
 </div>
 

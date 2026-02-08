@@ -1,44 +1,97 @@
-<form action="submit.php" method="POST" class="registration-form">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Event Registration</title>
 
-  <!-- Full Name -->
-  <label for="name">Full Name</label>
-  <input 
-    type="text" 
-    id="name" 
-    name="name" 
-    placeholder="e.g., Asif Shaik" 
-    required
-  >
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f4f6f8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
 
-  <!-- Email -->
-  <label for="email">Email Address</label>
-  <input 
-    type="email" 
-    id="email" 
-    name="email" 
-    placeholder="e.g., asif@gmail.com" 
-    required
-  >
+    .form-container {
+        background: #fff;
+        padding: 25px;
+        width: 320px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
 
-  <!-- Category -->
-  <label for="category">Participation Category</label>
-  <select id="category" name="category" required>
-    <option value="">-- Select Category --</option>
-    <option value="individual">Individual</option>
-    <option value="team">Team</option>
-    <option value="audience">Audience</option>
-  </select>
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
 
-  <!-- Biography -->
-  <label for="bio">Short Biography</label>
-  <textarea 
-    id="bio" 
-    name="bio" 
-    maxlength="200" 
-    placeholder="Tell us about yourself in max 200 characters..."
-    rows="4">
-  </textarea>
+    label {
+        display: block;
+        margin-top: 10px;
+        font-size: 14px;
+    }
 
-  <button type="submit">Register</button>
+    input, select, textarea {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+    }
 
-</form>
+    textarea {
+        resize: none;
+    }
+
+    button {
+        margin-top: 15px;
+        width: 100%;
+        padding: 10px;
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #0056b3;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="form-container">
+    <h2>Event Registration</h2>
+
+    <form>
+
+        <label>Full Name</label>
+        <input type="text" placeholder="Fill your full name" required>
+
+        <label>Email</label>
+        <input type="email" placeholder="Fill your email address" required>
+
+        <label>Participation Category</label>
+        <select required>
+            <option value="">-- Select Category --</option>
+            <option>Individual</option>
+            <option>Team</option>
+            <option>Audience</option>
+        </select>
+
+        <label>Short Biography</label>
+        <textarea maxlength="200" rows="4"
+          placeholder="Tell us about yourself (max 200 characters)..."></textarea>
+
+        <button type="submit">Register</button>
+
+    </form>
+</div>
+
+</body>
+</html>
