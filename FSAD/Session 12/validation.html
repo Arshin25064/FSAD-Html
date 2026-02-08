@@ -1,0 +1,44 @@
+<form action="submit.php" method="POST" class="registration-form">
+
+  <!-- Full Name -->
+  <label for="name">Full Name</label>
+  <input 
+    type="text" 
+    id="name" 
+    name="name" 
+    placeholder="e.g., Asif Shaik" 
+    required
+  >
+
+  <!-- Email -->
+  <label for="email">Email Address</label>
+  <input 
+    type="email" 
+    id="email" 
+    name="email" 
+    placeholder="e.g., asif@gmail.com" 
+    required
+  >
+
+  <!-- Category -->
+  <label for="category">Participation Category</label>
+  <select id="category" name="category" required>
+    <option value="">-- Select Category --</option>
+    <option value="individual">Individual</option>
+    <option value="team">Team</option>
+    <option value="audience">Audience</option>
+  </select>
+
+  <!-- Biography -->
+  <label for="bio">Short Biography</label>
+  <textarea 
+    id="bio" 
+    name="bio" 
+    maxlength="200" 
+    placeholder="Tell us about yourself in max 200 characters..."
+    rows="4">
+  </textarea>
+
+  <button type="submit">Register</button>
+
+</form>

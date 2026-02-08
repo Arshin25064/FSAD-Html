@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Media Blog Platform</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>My Media Blog</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Articles</a>
+    <a href="#">Videos</a>
+    <a href="#">Podcasts</a>
+  </nav>
+</header>
+
+<main>
+
+  <article class="post">
+    <h2>🎬 Exploring Web Technologies</h2>
+    <p>This article explains modern web development trends with a demo video.</p>
+
+    <video controls width="100%">
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+      Your browser does not support video.
+    </video>
+  </article>
+
+  <article class="post">
+    <h2>🎧 Podcast: Learning JavaScript</h2>
+    <p>Listen to our latest podcast episode about JavaScript basics.</p>
+
+    <audio controls>
+      <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mp3">
+      Your browser does not support audio.
+    </audio>
+  </article>
+
+  <article class="post">
+    <h2>📝 Blog Post with Media Controls</h2>
+    <p>Click buttons to control media playback manually.</p>
+
+    <video id="myVideo" width="100%">
+      <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+    </video>
+
+    <div class="controls">
+      <button onclick="playVideo()">Play</button>
+      <button onclick="pauseVideo()">Pause</button>
+      <button onclick="restartVideo()">Restart</button>
+    </div>
+  </article>
+
+</main>
+
+<footer>
+  <p>© 2026 Media Blog Platform</p>
+</footer>
+
+<script>
+const video = document.getElementById("myVideo");
+
+function playVideo() {
+  video.play();
+}
+
+function pauseVideo() {
+  video.pause();
+}
+
+function restartVideo() {
+  video.currentTime = 0;
+  video.play();
+}
+</script>
+
+</body>
+</html>

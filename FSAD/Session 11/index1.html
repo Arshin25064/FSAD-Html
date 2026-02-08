@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Dashboard Layout</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <h1>Student Dashboard</h1>
+  <div class="buttons">
+    <button onclick="setGrid()">Grid Layout</button>
+    <button onclick="setSidebar()">Sidebar Layout</button>
+  </div>
+</header>
+
+<div id="container" class="grid-layout">
+
+  <aside>
+    <h3>Menu</h3>
+    <nav>
+      <a href="#">Dashboard</a>
+      <a href="#">Students</a>
+      <a href="#">Courses</a>
+      <a href="#">Results</a>
+      <a href="#">Settings</a>
+    </nav>
+  </aside>
+
+  <main>
+    <section>
+      <article>
+        <h3>Total Students</h3>
+        <p>1,250 Registered</p>
+      </article>
+
+      <article>
+        <h3>Courses</h3>
+        <p>18 Active Courses</p>
+      </article>
+
+      <article>
+        <h3>Results</h3>
+        <p>95% Pass Rate</p>
+      </article>
+
+      <article>
+        <h3>Events</h3>
+        <p>5 Upcoming Events</p>
+      </article>
+    </section>
+  </main>
+
+</div>
+
+<footer>
+  <p>© 2026 Student Management System</p>
+</footer>
+
+<script>
+function setGrid() {
+  document.getElementById("container").className = "grid-layout";
+}
+
+function setSidebar() {
+  document.getElementById("container").className = "sidebar-layout";
+}
+</script>
+
+</body>
+</html>

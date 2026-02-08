@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Keyboard Movement</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+            background: #111;
+        }
+
+        /* Change to border-radius:50% for circle */
+        #player {
+            width: 60px;
+            height: 60px;
+            background: rgb(39, 206, 252);
+            position: absolute;
+            top: 200px;
+            left: 200px;
+            border-radius: 50%; /* 10px for square */
+        }
+    </style>
+</head>
+<body>
+
+<div id="player"></div>
+
+<script>
+    const player = document.getElementById("player");
+
+    let x = 200;
+    let y = 200;
+    const speed = 10;
+
+    document.addEventListener("keydown", (e) => {
+        switch (e.key) {
+            case "ArrowUp":
+            case "w":
+                y -= speed;
+                break;
+            case "ArrowDown":
+            case "s":
+                y += speed;
+                break;
+            case "ArrowLeft":
+            case "a":
+                x -= speed;
+                break;
+            case "ArrowRight":
+            case "d":
+                x += speed;
+                break;
+        }
+
+        // keep inside screen
+        x = Math.max(0, Math.min(window.innerWidth - 60, x));
+        y = Math.max(0, Math.min(window.innerHeight - 60, y));
+
+        player.style.left = x + "px";
+        player.style.top = y + "px";
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mouse Quadrant Monitor</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s ease;
+        }
+
+        #info {
+            background: rgba(0,0,0,0.6);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="info">Move your mouse</div>
+
+<script>
+    const info = document.getElementById("info");
+
+    document.addEventListener("mousemove", (e) => {
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+
+        const x = e.clientX;
+        const y = e.clientY;
+
+        let quadrant = "";
+        let color = "";
+
+        if (x < width / 2 && y < height / 2) {
+            quadrant = "Top Left";
+            color = "#ff6b6b";
+        } 
+        else if (x >= width / 2 && y < height / 2) {
+            quadrant = "Top Right";
+            color = "#4dabf7";
+        } 
+        else if (x < width / 2 && y >= height / 2) {
+            quadrant = "Bottom Left";
+            color = "#51cf66";
+        } 
+        else {
+            quadrant = "Bottom Right";
+            color = "#ffd43b";
+        }
+
+        document.body.style.backgroundColor = color;
+        info.textContent = `X: ${x}, Y: ${y} | ${quadrant}`;
+    });
+</script>
+
+</body>
+</html>

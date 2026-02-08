@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Q2 Receipt</title>
+<style>
+body {
+    background:#020617;
+    color:white;
+    font-family:Arial;
+}
+.box {
+    background:#1e293b;
+    padding:20px;
+    width:300px;
+    border-radius:10px;
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+<h2>Receipt Generator</h2>
+<p id="output"></p>
+</div>
+
+<script>
+
+const generateReceipt = (price, tip) => {
+    const total = price + tip;
+    return `Bill: ₹${price}, Tip: ₹${tip}, Total: ₹${total}`;
+};
+
+document.getElementById("output").innerText =
+    generateReceipt(450, 50);
+
+</script>
+
+</body>
+</html>
