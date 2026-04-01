@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Event Registration</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f4f6f8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .form-container {
+        background: #fff;
+        padding: 25px;
+        width: 320px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        margin-top: 10px;
+        font-size: 14px;
+    }
+
+    input, select, textarea {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+
+    textarea {
+        resize: none;
+    }
+
+    button {
+        margin-top: 15px;
+        width: 100%;
+        padding: 10px;
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #0056b3;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="form-container">
+    <h2>Event Registration</h2>
+
+    <form>
+
+        <label>Full Name</label>
+        <input type="text" placeholder="Fill your full name" required>
+
+        <label>Email</label>
+        <input type="email" placeholder="Fill your email address" required>
+
+        <label>Participation Category</label>
+        <select required>
+            <option value="">-- Select Category --</option>
+            <option>Individual</option>
+            <option>Team</option>
+            <option>Audience</option>
+        </select>
+
+        <label>Short Biography</label>
+        <textarea maxlength="200" rows="4"
+          placeholder="Tell us about yourself (max 200 characters)..."></textarea>
+
+        <button type="submit">Register</button>
+
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Q4 Spread & Rest</title>
+<style>
+body {
+    background:#020617;
+    color:white;
+    font-family:Arial;
+}
+.box {
+    background:#1e293b;
+    padding:20px;
+    width:350px;
+    border-radius:10px;
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+<h2>Party List</h2>
+<p id="spread"></p>
+<p id="rest"></p>
+</div>
+
+<script>
+const collegeFriends = ["Chandu", "Varshitha", "Karthik"];
+const workFriends = ["Varsha", "Neha", "Asif"];
+
+const partyList = ["Me", ...collegeFriends, ...workFriends];
+
+document.getElementById("spread").innerText =
+`Party List: ${partyList.join(", ")}`;
+
+function invite(host, ...guests) {
+    return `${host} invited: ${guests.join(", ")}`;
+}
+
+document.getElementById("rest").innerText =
+invite("Arshin", ...partyList);
+</script>
+
+</body>
+</html>

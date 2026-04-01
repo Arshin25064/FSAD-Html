@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Q1 Score Manager</title>
+<style>
+    
+body {
+    background:#111827;
+    color:white;
+    font-family:Arial;
+}
+.box {
+    background:#1f2933;
+    padding:20px;
+    width:300px;
+    border-radius:10px;
+}
+button {
+    background:#38bdf8;
+    border:none;
+    padding:8px;
+    border-radius:6px;
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+<h2>Match Score</h2>
+<button onclick="updateScore()">Update Score</button>
+<p id="score"></p>
+</div>
+
+<script>
+let teamA = 0;
+let teamB = 0;
+
+function updateScore() {
+    const addA = Math.floor(Math.random() * 6);
+    const addB = Math.floor(Math.random() * 6);
+
+    teamA += addA;
+    teamB += addB;
+
+    document.getElementById("score").innerText =
+        `Team A: ${teamA} | Team B: ${teamB}`;
+}
+</script>
+
+</body>
+</html>

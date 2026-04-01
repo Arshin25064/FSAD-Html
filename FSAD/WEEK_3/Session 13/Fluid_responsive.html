@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Layout Demo</title>
+
+<style>
+/* ---------- BASE RESET ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: #fff;
+}
+
+/* ---------- HEADER ---------- */
+header {
+    padding: 20px;
+    text-align: center;
+    background: #020617;
+    box-shadow: 0 2px 8px rgba(0,0,0,.4);
+}
+
+header h1 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+/* ---------- GRID CONTAINER ---------- */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    padding: 30px;
+}
+
+/* ---------- CARDS ---------- */
+.card {
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(6px);
+    padding: 20px;
+    border-radius: 14px;
+    transition: .3s;
+    box-shadow: 0 6px 18px rgba(0,0,0,.4);
+}
+
+.card:hover {
+    transform: translateY(-6px) scale(1.02);
+}
+
+.card h2 {
+    margin-bottom: 10px;
+    color: #927919;
+}
+
+.card p {
+    line-height: 1.6;
+    opacity: .9;
+}
+
+/* ---------- FLEX BUTTONS ---------- */
+.actions {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #bb8300, #e0c84f);
+    color: #000;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: .85;
+}
+
+/* ---------- MEDIA QUERIES ---------- */
+
+/* Tablets */
+@media (max-width: 900px) {
+    header {
+        padding: 16px;
+    }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    .card {
+        padding: 16px;
+    }
+
+    button {
+        flex: 100%;
+    }
+}
+
+/* Large Screens */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+        margin: auto;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Fluid Responsive Webpage</h1>
+    <p>Adapts beautifully across devices</p>
+</header>
+
+<section class="container">
+
+    <div class="card">
+        <h2>Flexbox</h2>
+        <p>Flexbox makes alignment and distribution of space easier in layouts.</p>
+        <div class="actions">
+            <button>Learn</button>
+            <button>Explore</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>CSS Grid</h2>
+        <p>Grid provides two-dimensional layouts for modern responsive design.</p>
+        <div class="actions">
+            <button>Read</button>
+            <button>Try</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Media Queries</h2>
+        <p>They adjust styles based on screen width, height and orientation.</p>
+        <div class="actions">
+            <button>Docs</button>
+            <button>Guide</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Fluid UI</h2>
+        <p>Uses flexible units and breakpoints to scale the webpage beautifully.</p>
+        <div class="actions">
+            <button>View</button>
+            <button>Start</button>
+        </div>
+    </div>
+
+</section>
+
+</body>
+</html>

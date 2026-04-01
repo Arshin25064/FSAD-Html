@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Q3 Destructuring</title>
+<style>
+body {
+    background:#0f172a;
+    color:white;
+    font-family:Arial;
+}
+.box {
+    background:#1e293b;
+    padding:20px;
+    width:350px;
+    border-radius:10px;
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+<h2>Destructuring Example</h2>
+<p id="result"></p>
+</div>
+
+<script>
+const employee = {
+    id: 101,
+    name: "Arshin Shaik",
+    role: "Developer",
+    location: {
+        city: "Hyderabad",
+        state: "TS"
+    }
+};
+
+const scores = [90, 85, 88];
+
+const { name, role, location: { city } } = employee;
+const [first, second] = scores;
+
+document.getElementById("result").innerText =
+`Name: ${name}, 
+ Role: ${role},
+ City: ${city}, 
+ Scores: ${first}, ${second}`;
+</script>
+
+</body>
+</html>
